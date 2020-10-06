@@ -1,14 +1,32 @@
 import React from "react";
-import Main from "../main/main";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
 import PropTypes from "prop-types";
+import Main from "../main/main";
+import Login from "../login/login";
+import Favorites from "../favorites/favorites";
+import Offer from "../offer/offer";
 
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
   const {placesCount} = props;
 
   return (
-    <Main placesCount={placesCount} />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path ="/">
+          <Main placesCount = {placesCount} />
+        </Route>
+        <Route exact path = "/favorites">
+          <Favorites />
+        </Route>
+        <Route exact path = "/login">
+          <Login />
+        </Route>
+        <Route exact path = "/offer/:roomId?">
+          <Offer />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
