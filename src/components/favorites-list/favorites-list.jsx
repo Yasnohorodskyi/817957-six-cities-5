@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import FavoritesCityList from "../favorites-city-list/favorites-city-list";
 import {CITY} from "../../const";
-import {offerPropTypes} from "../../utils/prop-types";
 
 const FavoritesList = (props) => {
   const {offers} = props;
 
-  const getCityList = (initialCityList, offersLyst) => {
+  const getCityList = (cities, offersLyst) => {
+    const initialCityList = [];
+    cities.forEach((city) => initialCityList.push(city.title));
+
     const cityLyst = [];
     offersLyst.forEach((offer) => (initialCityList.includes(offer.city) && offer.isBookmark ? cityLyst.push(offer.city) : ``));
     return Array.from(new Set(cityLyst));
@@ -26,7 +28,6 @@ const FavoritesList = (props) => {
 
 FavoritesList.propTypes = {
   offers: PropTypes.array.isRequired,
-  offer: PropTypes.shape(offerPropTypes).isRequired,
 };
 
 export default FavoritesList;

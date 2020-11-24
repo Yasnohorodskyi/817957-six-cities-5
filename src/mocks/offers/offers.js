@@ -1,11 +1,12 @@
 import {getRandomInteger, getRandomElement, getRandomList} from "../../utils/commons";
-import {TITLES, CITY, DESCRIPTION, PHOTOS, PHOTOS_SMALL, PHOTOS_IN_OFFER, ACCOMODATION_TYPE, RATINGS, AMENITIES, HOST_NAME, REVIEWS_IN_OFFER, OFFERS} from "../../const";
+import {TITLES, DESCRIPTION, PHOTOS, PHOTOS_SMALL, PHOTOS_IN_OFFER, ACCOMODATION_TYPE, RATINGS, AMENITIES, HOST_NAME, REVIEWS_IN_OFFER, OFFERS, OFFER_COORDINATES} from "../../const";
 import {generateReviews} from "../reviews/reviews";
 
-const generateOffer = () => {
+const generateOffer = (counter) => {
   return {
     idOffers: getRandomInteger(1000, 9999),
-    city: getRandomElement(CITY),
+    city: `Amsterdam`,
+    offerCoordinates: OFFER_COORDINATES[counter],
     title: getRandomElement(TITLES),
     description: {
       firstPart: getRandomElement(DESCRIPTION),

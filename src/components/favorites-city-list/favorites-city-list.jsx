@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import FavoritesOfferCard from "../favorites-offer-card/favorites-offer-card";
-import {offerPropTypes} from "../../utils/prop-types";
 
 class FavoritesCityList extends PureComponent {
   constructor(props) {
@@ -46,7 +45,7 @@ class FavoritesCityList extends PureComponent {
 
 FavoritesCityList.propTypes = {
   cityListName: PropTypes.string.isRequired,
-  offers: PropTypes.shape(offerPropTypes).isRequired,
+  offers: PropTypes.array.isRequired,
 };
 
 export default FavoritesCityList;
