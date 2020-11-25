@@ -134,8 +134,8 @@ const Offer = (props) => {
 };
 
 Offer.propTypes = {
-  offer: PropTypes.shape(offerPropTypes).isRequired,
-  offers: PropTypes.array.isRequired,
+  offer: offerPropTypes,
+  offers: PropTypes.arrayOf(offerPropTypes),
   guest: PropTypes.object.isRequired,
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import {offerPropTypes} from "../../utils/prop-types";
+import {reviewPropTypes} from "../../utils/prop-types";
 
 const Review = (props) => {
   const {review} = props;
@@ -46,6 +45,7 @@ const Review = (props) => {
 };
 
 Review.propTypes = {
-  review: PropTypes.shape(offerPropTypes).isRequired,
+  review: reviewPropTypes,
 };
 export default Review;
+

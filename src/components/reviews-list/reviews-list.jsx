@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Review from "../review/review";
 import ReviewForm from "../review-form/review-form";
 import {humanizeDate} from "../../utils/commons";
+import {reviewPropTypes} from "../../utils/prop-types";
 
 class ReviewsList extends PureComponent {
   constructor(props) {
@@ -54,8 +55,9 @@ class ReviewsList extends PureComponent {
 
 ReviewsList.propTypes = {
   guest: PropTypes.object.isRequired,
-  reviews: PropTypes.array.isRequired,
+  reviews: PropTypes.arrayOf(reviewPropTypes),
 };
 
 
 export default ReviewsList;
+

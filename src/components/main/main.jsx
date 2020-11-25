@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import OffersList from "../offers-list/offers-list";
 import Map from "../map/map";
 import Header from "../header/header";
+import {offerPropTypes} from "../../utils/prop-types";
 
 const Main = (props) => {
 
@@ -105,7 +106,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   placesCount: PropTypes.number.isRequired,
-  offers: PropTypes.array.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes),
 };
 
 export default Main;

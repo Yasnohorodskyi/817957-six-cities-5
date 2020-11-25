@@ -45,9 +45,9 @@ class Map extends PureComponent {
     });
   }
 
-  componentWillUnmount() {
-    leaflet.remove();
-  }
+  // componentWillUnmount() {
+  //   leaflet.remove();
+  // }
 
   render() {
     return (
@@ -57,8 +57,9 @@ class Map extends PureComponent {
 }
 
 Map.propTypes = {
-  offers: PropTypes.shape(offerPropTypes).isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes),
 };
 
 
 export default Map;
+

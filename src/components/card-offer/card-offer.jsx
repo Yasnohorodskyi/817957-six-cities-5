@@ -69,7 +69,7 @@ const CardOffer = (props) => {
 
 
 CardOffer.propTypes = {
-  offer: PropTypes.shape(offerPropTypes).isRequired,
+  offer: offerPropTypes,
   onMouseOver: PropTypes.func.isRequired,
   onMouseOut: PropTypes.func.isRequired,
 };

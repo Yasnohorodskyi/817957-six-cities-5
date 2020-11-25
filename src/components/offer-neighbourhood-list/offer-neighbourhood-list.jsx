@@ -2,6 +2,7 @@ import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import OfferNeigbourhoodCard from "../offer-neigbourhood-card/offer-neigbourhood-card";
 import {OFFERS_NEIGBOURHOOD_START_INDEX, OFFERS_NEIGBOURHOOD_END_INDEX} from "../../const";
+import {offerPropTypes} from "../../utils/prop-types";
 
 class OfferNeigbourhoodList extends PureComponent {
   constructor(props) {
@@ -36,7 +37,7 @@ class OfferNeigbourhoodList extends PureComponent {
 }
 
 OfferNeigbourhoodList.propTypes = {
-  offers: PropTypes.array.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes),
 };
 
 export default OfferNeigbourhoodList;

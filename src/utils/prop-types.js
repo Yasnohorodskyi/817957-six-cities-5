@@ -1,17 +1,15 @@
 import PropTypes from "prop-types";
 
-// export const reviewPropTypes = PropTypes.shape({
-//   review: PropTypes.shape({
-//     avatar: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     rating: PropTypes.number.isRequired,
-//     dateReview: PropTypes.string.isRequired,
-//     textReview: PropTypes.string.isRequired,
-//   }).isRequired,
-// }).isRequired;
+export const reviewPropTypes = PropTypes.shape({
+  idReview: PropTypes.number.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  dateReview: PropTypes.string.isRequired,
+  textReview: PropTypes.string.isRequired,
+}).isRequired;
 
 export const offerPropTypes = PropTypes.shape({
-
   idOffers: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
   offerCoordinates: PropTypes.array.isRequired,
@@ -38,17 +36,7 @@ export const offerPropTypes = PropTypes.shape({
     nameHost: PropTypes.string.isRequired,
     isSuper: PropTypes.bool.isRequired,
   }).isRequired,
-  reviews: PropTypes.shape({
-    review: PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
-      dateReview: PropTypes.string.isRequired,
-      textReview: PropTypes.string.isRequired,
-    }).isRequired,
-
-  }).isRequired,
-
+  reviews: PropTypes.array.isRequired,
 }).isRequired;
 
 // export const offerPropTypes = PropTypes.shape({
@@ -91,3 +79,5 @@ export const offerPropTypes = PropTypes.shape({
 //     }).isRequired,
 //   }).isRequired,
 // }).isRequired;
+
+

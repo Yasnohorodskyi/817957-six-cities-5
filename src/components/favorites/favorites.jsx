@@ -4,6 +4,7 @@ import FavoritesList from "../favorites-list/favorites-list";
 import {Link} from "react-router-dom";
 import Header from "../header/header";
 import {PATH} from "../../const";
+import {offerPropTypes} from "../../utils/prop-types";
 
 const Favorites = (props) => {
 
@@ -36,7 +37,7 @@ const Favorites = (props) => {
   );
 };
 Favorites.propTypes = {
-  offers: PropTypes.array.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes),
 };
 
 export default Favorites;

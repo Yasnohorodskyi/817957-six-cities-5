@@ -56,7 +56,9 @@ const FavoritesOfferCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`${PATH.OFFER}/${idOffers}`}>
+            {title}
+          </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -65,7 +67,7 @@ const FavoritesOfferCard = (props) => {
 };
 
 FavoritesOfferCard.propTypes = {
-  offer: PropTypes.shape(offerPropTypes).isRequired,
+  offer: offerPropTypes,
   onMouseOver: PropTypes.func.isRequired,
   onMouseOut: PropTypes.func.isRequired,
 };
