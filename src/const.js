@@ -28,7 +28,9 @@ export const GUEST = {
 };
 
 export const OFFERS_INDEX = 0;
-export const OFFERS_NEIGBOURHOOD_START_INDEX = 1;
-export const OFFERS_NEIGBOURHOOD_END_INDEX = 4;
 
+export const CARD_TYPE = {
+  MAIN: [`cities__place-card`, `cities__image-wrapper`],
+  OFFER: [`near-places__card`, `near-places__card`],
+};
 

@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import {PATH} from "../../const";
 import {Link} from "react-router-dom";
 import {offerPropTypes} from "../../utils/prop-types";
+import {CARD_TYPE} from "../../const";
 
 const CardOffer = (props) => {
-  const {offer, onMouseOver, onMouseOut} = props;
+  const {offer, cardType, onMouseOver, onMouseOut} = props;
   const {
     idOffers,
     isPremium,
@@ -16,10 +17,13 @@ const CardOffer = (props) => {
     title,
     type,
   } = offer;
+
+  const mainCard = isPremium && cardType === CARD_TYPE.MAIN ? true : null;
+
   return (
-    <article className="cities__place-card place-card" onMouseOver ={onMouseOver} onMouseOut={onMouseOut}>
-      {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+    <article className={`${cardType[0]}` + ` place-card`} onMouseOver ={onMouseOver} onMouseOut={onMouseOut}>
+      {mainCard && <div className="place-card__mark"><span>Premium</span></div>}
+      <div className={`${cardType[1]}` + ` place-card__image-wrapper`}>
         <Link to={`${PATH.OFFER}/${idOffers}`}>
           <img
             className="place-card__image"
@@ -70,6 +74,7 @@ const CardOffer = (props) => {
 
 CardOffer.propTypes = {
   offer: offerPropTypes,
+  cardType: PropTypes.array.isRequired,
   onMouseOver: PropTypes.func.isRequired,
   onMouseOut: PropTypes.func.isRequired,
 };

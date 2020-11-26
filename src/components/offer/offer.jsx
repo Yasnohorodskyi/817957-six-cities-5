@@ -4,10 +4,12 @@ import ReviewsList from "../reviews-list/reviews-list";
 import OfferNeigbourhoodList from "../offer-neighbourhood-list/offer-neighbourhood-list";
 import {offerPropTypes} from "../../utils/prop-types";
 import Header from "../header/header";
+import Map from "../map/map";
 
 const Offer = (props) => {
   const {offer, offers, guest} = props;
   const {
+    idOffers,
     isPremium,
     photos,
     price,
@@ -21,6 +23,9 @@ const Offer = (props) => {
     host,
     description,
   } = offer;
+
+  const offerNeigbourhood = [];
+  offers.forEach((item) => (item.idOffers !== idOffers ? offerNeigbourhood.push(item) : ``));
 
   return (
     <div className="page">
@@ -115,7 +120,9 @@ const Offer = (props) => {
 
             </div>
           </div>
-          <section className="property__map map" />
+          <section id="map" className="property__map map">
+            <Map offers={offerNeigbourhood}/>
+          </section>
         </section>
         <div className="container">
           <section className="near-places places">
@@ -123,7 +130,7 @@ const Offer = (props) => {
           Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <OfferNeigbourhoodList offers ={offers}/>
+              <OfferNeigbourhoodList offers ={offerNeigbourhood}/>
             </div>
           </section>
         </div>

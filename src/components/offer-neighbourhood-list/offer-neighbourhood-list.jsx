@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import OfferNeigbourhoodCard from "../offer-neigbourhood-card/offer-neigbourhood-card";
-import {OFFERS_NEIGBOURHOOD_START_INDEX, OFFERS_NEIGBOURHOOD_END_INDEX} from "../../const";
+import CardOffer from "../card-offer/card-offer";
+import {CARD_TYPE} from "../../const";
 import {offerPropTypes} from "../../utils/prop-types";
 
 class OfferNeigbourhoodList extends PureComponent {
@@ -15,14 +15,14 @@ class OfferNeigbourhoodList extends PureComponent {
 
   render() {
     const {offers} = this.props;
-    const offerNeigbourhood = offers.slice(OFFERS_NEIGBOURHOOD_START_INDEX, OFFERS_NEIGBOURHOOD_END_INDEX);
 
     return (
       <div className="cities__places-list places__list tabs__content">
-        {offerNeigbourhood.map((offer) => (
-          <OfferNeigbourhoodCard
+        {offers.map((offer) => (
+          <CardOffer
             offer={offer}
             key={offer.idOffers}
+            cardType={CARD_TYPE.OFFER}
             onMouseOver={() => {
               this.setState(() => ({activeOffer: offer}));
             }}
