@@ -27,10 +27,9 @@ export const GUEST = {
   email: `garret@siala.com`
 };
 
-export const OFFERS_INDEX = 0;
-
 export const CARD_TYPE = {
   MAIN: [`cities__place-card`, `cities__image-wrapper`],
   OFFER: [`near-places__card`, `near-places__card`],
 };
 
+export const OFFERS_INDEX = 0;
