@@ -121,7 +121,7 @@ const Offer = (props) => {
             </div>
           </div>
           <section id="map" className="property__map map">
-            <Map offers={offerNeigbourhood}/>
+            <Map offers={offerNeigbourhood} activeOffer={offer}/>
           </section>
         </section>
         <div className="container">
@@ -130,7 +130,7 @@ const Offer = (props) => {
           Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <OfferNeigbourhoodList offers ={offerNeigbourhood}/>
+              <OfferNeigbourhoodList offers ={offerNeigbourhood} />
             </div>
           </section>
         </div>

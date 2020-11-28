@@ -21,7 +21,15 @@ const CardOffer = (props) => {
   const mainCard = isPremium && cardType === CARD_TYPE.MAIN ? true : null;
 
   return (
-    <article className={`${cardType[0]}` + ` place-card`} onMouseOver ={onMouseOver} onMouseOut={onMouseOut}>
+    <article
+      className={`${cardType[0]}` + ` place-card`}
+      onMouseOver ={() => {
+        onMouseOver(offer);
+      }}
+      onMouseOut={()=> {
+        onMouseOut();
+      }}
+    >
       {mainCard && <div className="place-card__mark"><span>Premium</span></div>}
       <div className={`${cardType[1]}` + ` place-card__image-wrapper`}>
         <Link to={`${PATH.OFFER}/${idOffers}`}>
