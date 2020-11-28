@@ -36,9 +36,11 @@ class Map extends PureComponent {
   componentDidMount() {
     const {offers, activeOffer} = this.props;
 
+    let activeOfferFlag = false;
+
     this.initMap();
     const icon = leaflet.icon({
-      iconUrl: `img/pin.svg`,
+      iconUrl: `img/pin` + `${activeOfferFlag ? `-active` : ``}.svg`,
       iconSize: [30, 30],
     });
     offers.forEach((item) => {
@@ -50,12 +52,9 @@ class Map extends PureComponent {
        .addTo(this.map);
     });
     if (activeOffer) {
-      const activeicon = leaflet.icon({
-        iconUrl: `img/pin` + `${activeOffer ? `-active` : ``}.svg`,
-        iconSize: [30, 30],
-      });
+      activeOfferFlag = true;
       leaflet
-       .marker(activeOffer.offerCoordinates, {activeicon})
+       .marker(activeOffer.offerCoordinates, {icon})
        .addTo(this.map);
     }
   }
