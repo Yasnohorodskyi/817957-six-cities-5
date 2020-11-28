@@ -41,7 +41,6 @@ class Map extends PureComponent {
       iconUrl: `img/pin.svg`,
       iconSize: [30, 30],
     });
-
     offers.forEach((item) => {
       this.setState({
         currentOffer: item,
@@ -50,7 +49,6 @@ class Map extends PureComponent {
        .marker(item.offerCoordinates, {icon})
        .addTo(this.map);
     });
-
     if (activeOffer) {
       const activeicon = leaflet.icon({
         iconUrl: `img/pin` + `${activeOffer ? `-active` : ``}.svg`,
